@@ -21,7 +21,7 @@ angular.module('starter.services', [])
     face: 'img/adam.jpg'
   }, {
     id: 3,
-    name: 'Perry Governor',
+    name: 'Perry Gover',
     lastText: 'Look at my mukluks!',
     face: 'img/perry.png'
   }, {
