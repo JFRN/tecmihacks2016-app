@@ -62,8 +62,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   
   
 //tab que hice de la informacion de la peda lokota alv 
-  .state('tab.information', {
-    url: '/information',
+  .state('tab.Information', {
+    url: '/Information',
     views: {
       'tab-information': {
         templateUrl: 'templates/tab-information.html',
