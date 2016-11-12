@@ -2,4 +2,4 @@
 Temporary repository for TTT
 
 Aplicación de fiestas juveniles
-- Android Studio
+- Ionic
