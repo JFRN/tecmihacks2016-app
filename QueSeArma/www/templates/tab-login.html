@@ -1,5 +1,5 @@
-<ion-view title="Login" id="login">
-  <ion-content padding="true" class="has-header">
+<ion-view title="Login" id="login"  ng-app="mySuperApp">
+  <ion-content padding="true" class="has-header" ng-controller="PopupCtrl">
     <form id="bienvenido-form1" class="list">
       <div id="bienvenido-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
         <p style="color:#000000;">Inicia sesión en
@@ -18,6 +18,6 @@
     <a href="#/tab/dash"><button id="bienvenido-button1" class="button button-positive  button-block">Iniciar sesión</button></a>
     <div id="bienvenido-button-bar1" class="button-bar"></div>
     <button id="bienvenido-button8" class="button button-positive  button-block">Registrarse</button>
-    <button id="bienvenido-button9" class="button button-positive  button-block">Olvide mi contraseña</button>
+    <button id="bienvenido-button9" class="button button-positive  button-block" ng-click="showPopup()">Olvide mi contraseña</button>
   </ion-content>
 </ion-view>
