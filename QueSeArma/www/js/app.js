@@ -126,3 +126,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/login');
 });
+
+function activateLogin() // no ';' here
+{
+    document.getElementById("logintab").className = "invisible-tab";
+}
+
+function deactivateLogin() // no ';' here
+{
+    var element = document.getElementById("logintab");
+    var elementParent = document.getElementById("tabs");
+    elementParent.removeChild(element);
+    return false;
+}
