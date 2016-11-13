@@ -1,68 +1,15 @@
 angular.module('starter.controllers', [])
-//controlador del popup
-.controller('MyCtrl', function($scope, $ionicPopup) {
-
-   // When button is clicked, the popup will be shown...
-   $scope.showPopup = function() {
-      $scope.data = {}
-    
-      // Custom popup
-      var myPopup = $ionicPopup.show({
-         template: '<input type = "text" ng-model = "data.model">',
-         title: 'Title',
-         subTitle: 'Subtitle',
-         scope: $scope,
-			
-         buttons: [
-            { text: 'Cancel' }, {
-               text: '<b>Save</b>',
-               type: 'button-positive',
-                  onTap: function(e) {
-						
-                     if (!$scope.data.model) {
-                        //don't allow the user to close unless he enters model...
-                           e.preventDefault();
-                     } else {
-                        return $scope.data.model;
-                     }
-                  }
-            }
-         ]
-      });
-
-      myPopup.then(function(res) {
-         console.log('Tapped!', res);
-      });    
-   };
-
-})
 
 .controller('DashCtrl', function($scope) {})
+
+//controlador del popup
+
+
 
 .controller('InformationCtrl', function($scope) {})
 
 .controller('LoginCtrl', function($scope) {})
 
-
-.controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
-  var options = {timeout: 10000, enableHighAccuracy: true};
- 
-  $cordovaGeolocation.getCurrentPosition(options).then(function(position){
- 
-    var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
- 
-    var mapOptions = {
-      center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
- 
-    $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
- 
-  }, function(error){
-    console.log("Could not get location");
-  });
-})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
@@ -87,8 +34,72 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
+})
+
+
+
+.controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
+
+// Triggered on a button click, or some other target
+$scope.showPopup = function() {
+  $scope.data = {};
+
+  // An elaborate, custom popup
+  var myPopup = $ionicPopup.show({
+    template: '<p><input type="password" ng-model="data.wifi"></p>',  // String (optional). The html template to place in the popup body.
+    title: 'Peda TecmiHacks',
+    subTitle: 'Costo: $230',
+    
+    scope: $scope,
+    buttons: [
+      { text: 'Cancel' },
+      {
+        text: '<b>Save</b>',
+        type: 'button-positive',
+        onTap: function(e) {
+          if (!$scope.data.wifi) {
+            //don't allow the user to close unless he enters wifi password
+            e.preventDefault();
+          } else {
+            return $scope.data.wifi;
+          }
+        }
+      }
+    ]
+  });
+
+  myPopup.then(function(res) {
+    console.log('Tapped!', res);
+  });
+
+  
+ };
+
+ // A confirm dialog
+ $scope.showConfirm = function() {
+   var confirmPopup = $ionicPopup.confirm({
+     title: 'Consume Ice Cream',
+     template: 'Are you sure you want to eat this ice cream?'
+   });
+
+   confirmPopup.then(function(res) {
+     if(res) {
+       console.log('You are sure');
+     } else {
+       console.log('You are not sure');
+     }
+   });
+ };
+
+ // An alert dialog
+ $scope.showAlert = function() {
+   var alertPopup = $ionicPopup.alert({
+     title: 'Don\'t eat that!',
+     template: 'It might taste good'
+   });
+
+   alertPopup.then(function(res) {
+     console.log('Thank you for not eating my delicious ice cream cone');
+   });
+ };
 });
-
-
-
-
