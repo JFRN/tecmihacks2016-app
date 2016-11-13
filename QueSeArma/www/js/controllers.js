@@ -37,7 +37,7 @@ angular.module('starter.controllers', [])
 })
 
 
-
+/********************************************************************************** */
 .controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
 
 // Triggered on a button click, or some other target
@@ -103,3 +103,4 @@ $scope.showPopup = function() {
    });
  };
 });
+

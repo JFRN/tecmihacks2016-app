@@ -1,58 +1,75 @@
 
-<ion-view view-title="Perfil" class="splash_screen_bg">
+<ion-view view-title="Eventos" class="splash_screen_bg">
   <ion-content class="padding" >
 
-    <div class="list card">
+<div class="list">
 
+<h4 align="center"> Arma tu Pachanga </h4>
 
-  <div class="item item-avatar">
-    <img src="img/pato.png">
-    <h2>Patricio Martínez</h2>
-    <p>Buena Copa</p>
-  </div>
-
-  <div class="item item-body">
-    <img class="full-image" src="img/pato.png">
-    <p>
-      Estudiante IDS TecMilenio, amante de la tecnología, party beast.
-    </p>
-    <p>
-      
-    </p>
-  </div>
-
-</div>
-    <div class="list">
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Eventos asistidos</span>
-    <input type="text" placeholder="68">
-  </label>
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Eventos Organizados</span>
-    <input type="text" placeholder="3">
+<div class="list list-inset">
+  <label class="item item-input">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Introduce el nombre de tu fiesta ">
   </label>
 </div>
-<button class="button button-block button-positive">
-  Administrar Perfil
+
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Tipo de Fiesta
+    </div>
+    <select>
+      <option>Tranqui</option>
+      <option selected>Mediana</option>
+      <option>Masiva</option>
+    </select>
+  </label>
+</div>
+
+
+<ul class="list">
+
+  <li class="item item-toggle">
+     Cover
+     <label class="toggle toggle-assertive">
+       <input type="checkbox">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+</ul>
+
+
+ <h4 align="center">Cover p/Persona </h4>
+<div class="item range">
+ 
+  <i class="icon ion-cash"></i>
+  <input type="range" name="Presupuesto" min="0" max="100" value="33">
+  <i class="icon ion-cash"></i>
+</div>
+
+<h4 align ="center"> Capacidad de tu Pachanga  </h4>
+
+
+<div class="item range">
+ 
+  <i class="ion-ios-people-outline"></i>
+  <input type="range" name="Presupuesto" min="0" max="100" value="33">
+  <i class="ion-ios-people"></i>
+</div>
+<h4 align ="center"> Ubicación de tu Pachanga  </h4>
+<div class="list list-inset">
+  <label class="item item-input">
+    <i class="icon ion-ios-location placeholder-icon"></i>
+    <input type="text" placeholder="Introduce la ubicación de tu evento ">
+  </label>
+</div>
+
+
+<button class="button button-block button-balanced">
+  CREAR PACHANGA
 </button>
-<div class="list card">
- <div class="item item-avatar">
-    <img src="img/facebook.png">
-    <h2>Facebook</h2>
-    <p>Tu perfil está vinculado.</p>
-  </div>
-  <div class="item item-avatar">
-    <img src="img/twitter.png">
-    <h2>Twitter</h2>
-    <p>Tu perfil está vinculado.</p>
-  </div>
-  <div class="item item-avatar">
-    <img src="img/paypal.png">
-    <h2>PayPal</h2>
-    <p>Tu método de pago está registrado.</p>
-  </div>
-  <button class="button button-block button-assertive">
-  Cerrar Sesión
-</button>
+
   </ion-content>
 </ion-view>
