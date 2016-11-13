@@ -1,26 +1,6 @@
 /* Empty. Add your own CSS if you like */
-#profile-avatar {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: .1em;
-    border-radius: 50%;
-    background-position:center;
-    width: 6em;
-  }
-.centered-img {
-    margin-left: auto;
-    margin-right: auto;
-}
-.profile {
-    font-family: sans-serif !important;
-}
-
-.profile-description {
-    margin-top: 7em;
-    font-size: 12px;
-}
-.centered-text {
-    text-align: center;
-    margin-top: 6em;
+.splash_screen_bg {
+  background-image: url("img/fondo.png");
+  background-position: center;
+  background-repeat: no-repeat;
 }
