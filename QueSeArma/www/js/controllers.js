@@ -48,7 +48,7 @@ $scope.showPopup = function() {
   var myPopup = $ionicPopup.show({
     title: 'Registrarte es más facil de lo que crees',
     
-    template: '<p><b>Nombre de usuario:</b><input type="text" ><p><b>Correo electronico:</b><input type="email" ><p><b>Contraseña:</b></p><input type="password" >',  // String (optional). The html template to place in the popup body.
+  template: '<p><b>Nombre de usuario:</b><input type="text" placeholder="PepitoLokote"><p><b>Correo electrónico:</b><input type="email" placeholder="ejemplo@123.com" ><p><b>Contraseña:</b></p><input type="password" placeholder="********" >',  // String (optional). The html template to place in the popup body.
 
     scope: $scope,
     buttons: [
