@@ -4,6 +4,9 @@ angular.module('starter.controllers', [])
 
 .controller('InformationCtrl', function($scope) {})
 
+.controller('LoginCtrl', function($scope) {})
+
+
 .controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
   var options = {timeout: 10000, enableHighAccuracy: true};
  

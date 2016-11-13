@@ -7,6 +7,8 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
+
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -23,6 +25,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
+
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider){($ionicConfigProvider.tabs.position('button'));
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -30,7 +33,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-
   // setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
@@ -50,6 +52,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+
   .state('tab.map', {
     url: '/map',
     views: {
@@ -68,6 +71,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       'tab-information': {
         templateUrl: 'templates/tab-information.html',
         controller: 'InformationCtrl'
+      }
+    }
+  })
+  
+    
+   .state('tab.login', {
+    url: '/login',
+    views: {
+      'tab-login': {
+        templateUrl: 'templates/tab-login.html',
+        controller: 'LoginCtrl'
       }
     }
   })
@@ -107,6 +121,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
-
+  $urlRouterProvider.otherwise('/tab/login');
 });
