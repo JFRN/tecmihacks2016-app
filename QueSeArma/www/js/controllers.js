@@ -46,15 +46,15 @@ $scope.showPopup = function() {
 
   // An elaborate, custom popup
   var myPopup = $ionicPopup.show({
-    template: '<p><input type="password" ng-model="data.wifi"></p>',  // String (optional). The html template to place in the popup body.
-    title: 'Peda TecmiHacks',
-    subTitle: 'Costo: $230',
+    title: 'Registrarte es más facil de lo que crees',
     
+    template: '<p><b>Nombre de usuario:</b><input type="text" ><p><b>Correo electronico:</b><input type="email" ><p><b>Contraseña:</b></p><input type="password" >',  // String (optional). The html template to place in the popup body.
+
     scope: $scope,
     buttons: [
-      { text: 'Cancel' },
+      { text: 'Cancelar' },
       {
-        text: '<b>Save</b>',
+        text: '<b>Registrame</b>',
         type: 'button-positive',
         onTap: function(e) {
           if (!$scope.data.wifi) {
