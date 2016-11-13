@@ -49,15 +49,15 @@ $scope.showPopup = function() {
 
   // An elaborate, custom popup
   var myPopup = $ionicPopup.show({
-    title: 'Stemen',
+     title: 'Fiesta del año 2016 en TecMilenio Las Torres',
     
-  template: '<p><b>Nombre de usuario:</b><input type="text" placeholder="PepitoLokote"><p><b>Correo electrónico:</b><input type="email" placeholder="ejemplo@123.com" ><p><b>Contraseña:</b></p><input type="password" placeholder="********" >',  // String (optional). The html template to place in the popup body.
+  template: '<p><b>Cover: </b>$200<br><b>Descripción: </b>Música electronica y muy buen ambiente<br> <b>Barra libre hasta las 3</b> <br><b>Anfitrión: </b>José Martinez</p>',  // String (optional). The html template to place in the popup body.
 
     scope: $scope,
     buttons: [
       { text: 'Cancelar' },
       {
-        text: '<b>Registrame</b>',
+        text: '<b>Quiero ir</b>',
         type: 'button-positive',
         onTap: function(e) {
           if (!$scope.data.wifi) {
