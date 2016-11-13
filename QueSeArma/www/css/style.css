@@ -3,10 +3,10 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 6em;
+    margin-top: .1em;
     border-radius: 50%;
     background-position:center;
-    width: 10em;
+    width: 6em;
   }
 .centered-img {
     margin-left: auto;
@@ -17,9 +17,10 @@
 }
 
 .profile-description {
+    margin-top: 7em;
     font-size: 12px;
 }
 .centered-text {
     text-align: center;
-    
+    margin-top: 6em;
 }

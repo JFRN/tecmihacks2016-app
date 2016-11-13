@@ -62,7 +62,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   
   
 //tab que hice de la informacion de la peda lokota alv 
-  .state('tab.Informacion', {
+  .state('tab.Information', {
     url: '/Information',
     views: {
       'tab-information': {
@@ -107,6 +107,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/login');
 
 });
