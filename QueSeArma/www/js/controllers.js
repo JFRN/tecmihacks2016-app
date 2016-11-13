@@ -38,6 +38,42 @@ angular.module('starter.controllers', [])
 
 
 /********************************************************************************** */
+.controller('Popup2Ctrl', function($scope, $ionicPopup) {
+
+   // When button is clicked, the popup will be shown...
+   $scope.showPopup = function() {
+      $scope.data = {}
+    
+      // Custom popup
+      var myPopup = $ionicPopup.show({
+          title: 'Fiesta del año 2016 en Cintermex',
+    
+         template: '<p><b>Cover:</b>$200<br><b>Descripción:</b>Música electronica y muy buen ambiente<br><b>Anfitrión:</b>José Martinez<br><b>Contacto:</b>Facebook, Twitter</p>',  // String (optional). The html template to place in the popup body.
+         scope: $scope,
+			
+         buttons: [
+          { text: 'Cancelar' },
+          {
+            text: '<b>Apuntame</b>',
+            type: 'button-positive',
+            onTap: function(e) {
+              if (!$scope.data.wifi) {
+                //don't allow the user to close unless he enters wifi password
+                e.preventDefault();
+              } else {
+                return $scope.data.wifi;
+              }
+            }
+          }
+        ]
+      });
+
+      myPopup.then(function(res) {
+         console.log('Tapped!', res);
+      });    
+   };
+
+})
 .controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
 
 // Triggered on a button click, or some other target
