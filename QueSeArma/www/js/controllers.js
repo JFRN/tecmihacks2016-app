@@ -10,6 +10,9 @@ angular.module('starter.controllers', [])
 
 .controller('LoginCtrl', function($scope) {})
 
+.controller('MapCtrl', function($scope) {})
+
+
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
@@ -38,42 +41,73 @@ angular.module('starter.controllers', [])
 
 
 /********************************************************************************** */
-.controller('Popup2Ctrl', function($scope, $ionicPopup) {
+.controller('Popup2Ctrl',function($scope, $ionicPopup, $timeout) {
 
-   // When button is clicked, the popup will be shown...
-   $scope.showPopup = function() {
-      $scope.data = {}
+// Triggered on a button click, or some other target
+$scope.showPopup = function() {
+  $scope.data = {};
+
+  // An elaborate, custom popup
+  var myPopup = $ionicPopup.show({
+    title: 'Stemen',
     
-      // Custom popup
-      var myPopup = $ionicPopup.show({
-          title: 'Fiesta del año 2016 en Cintermex',
-    
-         template: '<p><b>Cover:</b>$200<br><b>Descripción:</b>Música electronica y muy buen ambiente<br><b>Anfitrión:</b>José Martinez<br><b>Contacto:</b>Facebook, Twitter</p>',  // String (optional). The html template to place in the popup body.
-         scope: $scope,
-			
-         buttons: [
-          { text: 'Cancelar' },
-          {
-            text: '<b>Apuntame</b>',
-            type: 'button-positive',
-            onTap: function(e) {
-              if (!$scope.data.wifi) {
-                //don't allow the user to close unless he enters wifi password
-                e.preventDefault();
-              } else {
-                return $scope.data.wifi;
-              }
-            }
+  template: '<p><b>Nombre de usuario:</b><input type="text" placeholder="PepitoLokote"><p><b>Correo electrónico:</b><input type="email" placeholder="ejemplo@123.com" ><p><b>Contraseña:</b></p><input type="password" placeholder="********" >',  // String (optional). The html template to place in the popup body.
+
+    scope: $scope,
+    buttons: [
+      { text: 'Cancelar' },
+      {
+        text: '<b>Registrame</b>',
+        type: 'button-positive',
+        onTap: function(e) {
+          if (!$scope.data.wifi) {
+            //don't allow the user to close unless he enters wifi password
+            e.preventDefault();
+          } else {
+            return $scope.data.wifi;
           }
-        ]
-      });
+        }
+      }
+    ]
+  });
 
-      myPopup.then(function(res) {
-         console.log('Tapped!', res);
-      });    
-   };
+  myPopup.then(function(res) {
+    console.log('Tapped!', res);
+  });
 
+  
+ };
+
+ // A confirm dialog
+ $scope.showConfirm = function() {
+   var confirmPopup = $ionicPopup.confirm({
+     title: 'Consume Ice Cream',
+     template: 'Are you sure you want to eat this ice cream?'
+   });
+
+   confirmPopup.then(function(res) {
+     if(res) {
+       console.log('You are sure');
+     } else {
+       console.log('You are not sure');
+     }
+   });
+ };
+
+ // An alert dialog
+ $scope.showAlert = function() {
+   var alertPopup = $ionicPopup.alert({
+     title: 'Don\'t eat that!',
+     template: 'It might taste good'
+   });
+
+   alertPopup.then(function(res) {
+     console.log('Thank you for not eating my delicious ice cream cone');
+   });
+ };
 })
+
+/*************************************************************************************** */
 .controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
 
 // Triggered on a button click, or some other target
