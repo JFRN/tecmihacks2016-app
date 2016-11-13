@@ -129,13 +129,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 function activateLogin() // no ';' here
 {
-    document.getElementById("logintab").className = "invisible-tab";
+  
 }
 
 function deactivateLogin() // no ';' here
-{
-    var element = document.getElementById("logintab");
-    var elementParent = document.getElementById("tabs");
-    elementParent.removeChild(element);
-    return false;
-}
+{}
